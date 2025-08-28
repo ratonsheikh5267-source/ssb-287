@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Raton's Portfolio</title>
+  <style>
+    * {margin: 0; padding: 0; box-sizing: border-box;}
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background: #f9f9f9;
+      color: #333;
+      transition: 0.3s;
+    }
+    header {
+      background: #333;
+      color: #fff;
+      padding: 15px 20px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav a {
+      color: #fff;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.2s;
+    }
+    nav a:hover {color: yellow;}
+    section {
+      padding: 50px 20px;
+      text-align: center;
+    }
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("https://picsum.photos/1200/400") no-repeat center/cover;
+      color: #fff;
+      padding: 100px 20px;
+    }
+    .hero h1 {font-size: 2.5rem; margin-bottom: 10px;}
+    .hero p {font-size: 1.2rem;}
+    .hero button {
+      padding: 10px 20px;
+      margin-top: 20px;
+      border: none;
+      background: yellow;
+      color: #333;
+      cursor: pointer;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+    .projects {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .card {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 20px;
+      width: 250px;
+      transition: 0.3s;
+    }
+    .card:hover {transform: scale(1.05);}
+    footer {
+      background: #333;
+      color: #fff;
+      text-align: center;
+      padding: 15px;
+      margin-top: 20px;
+    }
+    .dark-mode {
+      background: #222;
+      color: #eee;
+    }
+    .dark-mode header,
+    .dark-mode footer {
+      background: #111;
+    }
+    form input, form textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    form button {
+      padding: 10px 20px;
+      border: none;
+      background: #333;
+      color: #fff;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    form button:hover {background: #555;}
+    .toggle-btn {
+      margin-top: 20px;
+      padding: 8px 15px;
+      border: none;
+      background: #444;
+      color: #fff;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Raton's Portfolio</h1>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
+    <h1>Hi, I'm Raton Sheikh</h1>
+    <p>Future Web Developer 🚀</p>
+    <button onclick="alert('Thanks for visiting my site!')">Hire Me</button>
+    <br>
+    <button class="toggle-btn" onclick="toggleMode()">🌙 Dark / Light Mode</button>
+  </section>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>আমি রতন শেখ। আমি ওয়েব ডেভেলপার হতে চাই এবং শিখছি। এই ওয়েবসাইট আমার প্র্যাকটিস এবং ফিউচার ক্লায়েন্টদের দেখানোর জন্য।</p>
+  </section>
+
+  <section id="projects">
+    <h2>My Projects</h2>
+    <div class="projects">
+      <div class="card">
+        <h3>Project 1</h3>
+        <p>Simple Blog Website using HTML & CSS.</p>
+      </div>
+      <div class="card">
+        <h3>Project 2</h3>
+        <p>Online Shop Design with Product Cards.</p>
+      </div>
+      <div class="card">
+        <h3>Project 3</h3>
+        <p>Portfolio Website with JavaScript Features.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <form onsubmit="sendMessage(event)">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>© 2025 Raton Sheikh | All Rights Reserved</p>
+  </footer>
+
+  <script>
+    function toggleMode() {
+      document.body.classList.toggle("dark-mode");
+    }
+
+    function sendMessage(e) {
+      e.preventDefault();
+      alert("Your message has been sent successfully! ✅");
+    }
+  </script>
+</body>
+</html>
+
